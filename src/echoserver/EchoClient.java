@@ -24,12 +24,11 @@ public class EchoClient {
 			int line;
 			while ((line = System.in.read()) != -1) {
 				socketOutputStream.write(line);
-				int newLine = socketInputStream.read();
-				//System.out.write(newLine);
+//				int newLine = socketInputStream.read();
+//				System.out.write(newLine);
 			}
 			socket.shutdownOutput();
 			System.out.flush();
-			socket.close();
 		}
 		catch (ConnectException ce) {
 			System.out.println("We were unable to connect to the host");
@@ -42,7 +41,26 @@ public class EchoClient {
 
 		keyboardRead.start();
 
+		Thread serverRead = new Thread(() ->{
+			try {
+				int line;
+				while ((line = socketInputStream.read()) != -1) {
+					System.out.write(line);
+				}
+				System.out.println("done printing");
+				System.out.flush();
+				socket.close();
+			}
+			catch (ConnectException ce) {
+				System.out.println("We were unable to connect to the host");
+				System.out.println("You should make sure the server is running.");
+			} catch (IOException ioe) {
+				System.out.println("We caught an unexpected exception");
+				System.err.println(ioe);
+			}
+		});
 
+		serverRead.start();
 
 	}
 

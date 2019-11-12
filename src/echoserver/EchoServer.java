@@ -33,7 +33,7 @@ public class EchoServer {
 							}
 
 
-							socket.shutdownOutput();
+							//socket.shutdownOutput();
 							System.out.flush();
 							socket.close();
 
