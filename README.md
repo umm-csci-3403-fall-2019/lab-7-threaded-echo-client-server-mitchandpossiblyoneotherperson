@@ -1,6 +1,8 @@
 # Threaded Echo Client-Server
 
-[![Actions Status](https://github.com/UMM-CSci-Systems/Threaded-echo-client-server/workflows/Java%20CI/badge.svg)](https://github.com/UMM-CSci-Systems/Threaded-echo-client-server/actions)
+[![Actions Status](https://github.com/umm-csci-3403-fall-2019/lab-7-threaded-echo-client-server-mitchandpossiblyoneotherperson/Java%20CI/badge.svg)](https://github.com/umm-csci-3403-fall-2019/lab-7-threaded-echo-client-server-mitchandpossiblyoneotherperson/actions)
+
+
 
 - [Threaded Echo Client-Server](#threaded-echo-client-server)
   - [Fix your status badge](#fix-your-status-badge)
