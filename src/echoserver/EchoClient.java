@@ -47,7 +47,7 @@ public class EchoClient {
 				while ((line = socketInputStream.read()) != -1) {
 					System.out.write(line);
 				}
-				System.out.println("done printing");
+				// System.out.println("done printing");
 				System.out.flush();
 				socket.close();
 			}

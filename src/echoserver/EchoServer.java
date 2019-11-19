@@ -20,7 +20,7 @@ public class EchoServer {
 			ServerSocket serverSocket = new ServerSocket(PORT_NUMBER);
 			while (true) {
 				Socket socket = serverSocket.accept();
-				System.out.println("Request accepted");
+				//System.out.println("Request accepted");
 				InputStream inputStream = socket.getInputStream();
 				OutputStream outputStream = socket.getOutputStream();
 
@@ -29,11 +29,11 @@ public class EchoServer {
 							int line;
 							while ((line = inputStream.read()) != -1) {
 								outputStream.write(line);
-								System.out.println("Passed through here: " + line);
+								//System.out.println("Passed through here: " + line);
 							}
 
 
-							//socket.shutdownOutput();
+							socket.shutdownOutput();
 							System.out.flush();
 							socket.close();
 
